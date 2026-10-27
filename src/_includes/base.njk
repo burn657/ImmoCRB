@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if title %}{{ title }} | {% endif %}{{ site.nom }}</title>
+<meta name="description" content="{{ description or (site.nom + ', ' + site.courtier + ', courtier immobilier.') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="entete">
+  <div class="conteneur entete__in">
+    <a href="/" class="logo">Immo<span>CRB</span></a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" class="nav" aria-label="Navigation principale">
+      <a href="/proprietes/">Propriétés</a>
+      <a href="/acheter/">Acheter</a>
+      <a href="/vendre/">Vendre</a>
+      <a href="/outils/">Outils</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="/contact/">Contact</a>
+      <a href="/estimation/" class="btn btn--petit">Estimation gratuite</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenu">
+{{ content | safe }}
+</main>
+
+<footer class="pied">
+  <div class="conteneur pied__in">
+    <div>
+      <p class="pied__nom">{{ site.nom }}</p>
+      <p>{{ site.courtier }}, {{ site.titre | lower }} · {{ site.agence }}</p>
+      <p>Permis OACIQ {{ site.permis }}</p>
+    </div>
+    <div>
+      <p>{{ site.telephone }}</p>
+      <p>{{ site.courriel }}</p>
+      <p>{{ site.adresse }}</p>
+    </div>
+    <div class="pied__social">
+      {% if site.facebook %}<a href="{{ site.facebook }}">Facebook</a>{% endif %}
+      {% if site.instagram %}<a href="{{ site.instagram }}">Instagram</a>{% endif %}
+      {% if site.youtube %}<a href="{{ site.youtube }}">YouTube</a>{% endif %}
+    </div>
+  </div>
+</footer>
+<script>
+  const b = document.querySelector('.menu-btn'), n = document.getElementById('menu');
+  b.addEventListener('click', () => { const o = n.classList.toggle('ouvert'); b.setAttribute('aria-expanded', o); });
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: Me contacter
+permalink: /contact/
+---
+<div class="conteneur section estimation">
+  <div class="estimation__texte">
+    <h1>Me contacter</h1>
+    <p class="intro">Une question, un projet d'achat ou de vente&nbsp;? Écrivez-moi ou appelez-moi.</p>
+    <p><strong>{{ site.telephone }}</strong><br>{{ site.courriel }}<br>{{ site.adresse }}</p>
+    <p class="sous">Région desservie : {{ site.region }}</p>
+  </div>
+  <form name="contact" method="POST" action="/merci/" data-netlify="true" netlify-honeypot="champ-robot" class="formulaire carte-blanche">
+    <input type="hidden" name="form-name" value="contact">
+    <p class="cache"><label>Ne pas remplir <input name="champ-robot"></label></p>
+    <label>Nom<input type="text" name="nom" required autocomplete="name"></label>
+    <div class="grille-champs">
+      <label>Courriel<input type="email" name="courriel" required autocomplete="email"></label>
+      <label>Téléphone<input type="tel" name="telephone" autocomplete="tel"></label>
+    </div>
+    <label>Message<textarea name="message" rows="5" required></textarea></label>
+    <button type="submit" class="btn">Envoyer</button>
+  </form>
+</div>

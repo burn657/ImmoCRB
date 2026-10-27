@@ -1,0 +1,11 @@
+<a href="{{ p.url }}" class="carte">
+  <div class="carte__photo">
+    {% if p.data.photo_principale %}<img src="{{ p.data.photo_principale }}" alt="{{ p.data.titre }}" loading="lazy">{% else %}<span>Photo à venir</span>{% endif %}
+    <span class="pastille{% if p.data.statut == 'vendu' %} pastille--vendu{% endif %}">{{ p.data.statut | statutLabel }}</span>
+  </div>
+  <div class="carte__corps">
+    <p class="carte__prix">{{ p.data.prix | prix }}</p>
+    <p class="carte__titre">{{ p.data.type }} · {{ p.data.ville }}</p>
+    <p class="carte__specs">{% if p.data.chambres %}{{ p.data.chambres }} chambre{% if p.data.chambres > 1 %}s{% endif %}{% endif %}{% if p.data.sdb %} · {{ p.data.sdb }} salle{% if p.data.sdb > 1 %}s{% endif %} de bain{% endif %}</p>
+  </div>
+</a>

@@ -1,0 +1,24 @@
+---
+layout: base.njk
+title: À propos
+permalink: /a-propos/
+---
+<div class="conteneur section apropos">
+  <div class="apropos__photo">{% if site.photo %}<img src="{{ site.photo }}" alt="{{ site.courtier }}">{% else %}<span>Votre photo</span>{% endif %}</div>
+  <div class="apropos__texte">
+    <p class="surtitre">{{ site.titre }}</p>
+    <h1>{{ site.courtier }}</h1>
+    <p class="intro">{{ site.apropos }}</p>
+    <p class="sous">{{ site.agence }} · Permis OACIQ {{ site.permis }} · {{ site.region }}</p>
+  </div>
+</div>
+<section class="fond-doux">
+  <div class="conteneur section">
+    <h2>Ce que mes clients en disent</h2>
+    <div class="grille-temoignages">
+      {% for t in temoignages.liste %}
+      <blockquote class="temoignage temoignage--blanc"><p>« {{ t.texte }} »</p><footer>{{ t.auteur }}, {{ t.ville }}</footer></blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>

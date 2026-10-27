@@ -1,0 +1,16 @@
+{
+  "nom": "ImmoCRB",
+  "courtier": "[Votre nom]",
+  "titre": "Courtier immobilier",
+  "agence": "[Agence]",
+  "permis": "[numéro]",
+  "telephone": "[Téléphone]",
+  "courriel": "[Courriel]",
+  "adresse": "[Adresse du bureau]",
+  "region": "[Région desservie]",
+  "photo": "",
+  "apropos": "[Court texte de présentation : votre parcours, votre région, votre façon de travailler avec vos clients.]",
+  "facebook": "",
+  "instagram": "",
+  "youtube": ""
+}

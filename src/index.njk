@@ -1,0 +1,56 @@
+---
+layout: base.njk
+---
+<section class="fond-doux">
+  <div class="conteneur section heros">
+    <div class="heros__texte">
+      <p class="surtitre">{{ site.courtier }}, {{ site.titre | lower }}</p>
+      <h1>Acheter ou vendre votre maison, avec quelqu'un qui connaît le coin.</h1>
+      <p class="intro">Découvrez mes propriétés à vendre, estimez la valeur de votre maison et trouvez les réponses à vos questions, au même endroit.</p>
+      <div class="boutons">
+        <a href="/proprietes/" class="btn">Voir mes propriétés</a>
+        <a href="/estimation/" class="btn btn--clair">Estimer ma maison</a>
+      </div>
+    </div>
+    <div class="heros__photo">
+      {% set une = collections.proprietes | first %}
+      {% if une and une.data.photo_principale %}<img src="{{ une.data.photo_principale }}" alt="{{ une.data.titre }}">{% else %}<span>Photo à venir</span>{% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="conteneur section">
+  <div class="titre-ligne">
+    <div>
+      <h2>Propriétés à la une</h2>
+      <p class="sous">Les maisons que je vous présente en ce moment.</p>
+    </div>
+    <a href="/proprietes/" class="lien">Voir toutes les propriétés →</a>
+  </div>
+  <div class="grille-cartes">
+    {% for p in collections.vedettes %}{% include "carte.njk" %}{% endfor %}
+  </div>
+</section>
+
+<section class="fond-doux">
+  <div class="conteneur section">
+    <h2>Outils immobiliers</h2>
+    <p class="sous">Faites vos calculs avant même de m'appeler.</p>
+    {% include "outils-cartes.njk" %}
+  </div>
+</section>
+
+<section class="conteneur section apropos">
+  <div class="apropos__photo">{% if site.photo %}<img src="{{ site.photo }}" alt="{{ site.courtier }}">{% else %}<span>Votre photo</span>{% endif %}</div>
+  <div class="apropos__texte">
+    <h2>À propos de moi</h2>
+    <p class="intro">{{ site.apropos }}</p>
+    {% set t = temoignages.liste | first %}
+    {% if t %}
+    <blockquote class="temoignage"><p>« {{ t.texte }} »</p><footer>{{ t.auteur }}, {{ t.ville }}</footer></blockquote>
+    {% endif %}
+    <a href="/a-propos/" class="lien">Lire tous les témoignages →</a>
+  </div>
+</section>
+
+{% include "rappel.njk" %}

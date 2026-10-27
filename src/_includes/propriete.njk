@@ -1,0 +1,59 @@
+---
+layout: base.njk
+---
+<div class="conteneur section section--courte">
+  <a href="/proprietes/" class="lien">← Retour aux propriétés</a>
+
+  <div class="galerie">
+    <div class="galerie__principale">
+      {% if photo_principale %}<img src="{{ photo_principale }}" alt="{{ titre }}">{% else %}<span>Photo à venir</span>{% endif %}
+    </div>
+    {% for ph in photos %}
+    <a href="{{ ph }}" class="galerie__vignette"><img src="{{ ph }}" alt="Photo {{ loop.index + 1 }} de {{ titre }}" loading="lazy"></a>
+    {% endfor %}
+  </div>
+
+  <div class="fiche">
+    <div class="fiche__contenu">
+      <span class="pastille pastille--statique{% if statut == 'vendu' %} pastille--vendu{% endif %}">{{ statut | statutLabel }}</span>
+      <h1 class="fiche__titre">{{ titre }}</h1>
+      <p class="sous">{{ adresse }}, {{ ville }}</p>
+      <p class="fiche__prix">{{ prix | prix }}</p>
+
+      <dl class="caracs">
+        {% if chambres %}<div><dt>Chambres</dt><dd>{{ chambres }}</dd></div>{% endif %}
+        {% if sdb %}<div><dt>Salles de bain</dt><dd>{{ sdb }}</dd></div>{% endif %}
+        {% if superficie %}<div><dt>Superficie</dt><dd>{{ superficie }}</dd></div>{% endif %}
+        {% if terrain %}<div><dt>Terrain</dt><dd>{{ terrain }}</dd></div>{% endif %}
+        {% if annee %}<div><dt>Construction</dt><dd>{{ annee }}</dd></div>{% endif %}
+      </dl>
+
+      <h2>Description</h2>
+      <div class="texte">{{ content | safe }}</div>
+
+      {% set yt = video | youtubeId %}
+      {% if yt %}
+      <h2>Visite vidéo</h2>
+      <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ yt }}" title="Visite vidéo de {{ titre }}" allowfullscreen loading="lazy"></iframe></div>
+      {% endif %}
+
+      {% if centris %}<p class="sous petit">No Centris : {{ centris }}</p>{% endif %}
+    </div>
+
+    <aside class="encadre">
+      <p class="encadre__nom">{{ site.courtier }}</p>
+      <p class="sous petit">{{ site.titre }}</p>
+      <h2>Cette maison vous intéresse&nbsp;?</h2>
+      <form name="visite" method="POST" action="/merci/" data-netlify="true" netlify-honeypot="champ-robot" class="formulaire">
+        <input type="hidden" name="form-name" value="visite">
+        <input type="hidden" name="propriete" value="{{ titre }} ({{ page.url }})">
+        <p class="cache"><label>Ne pas remplir <input name="champ-robot"></label></p>
+        <label>Nom<input type="text" name="nom" required autocomplete="name"></label>
+        <label>Téléphone ou courriel<input type="text" name="contact" required></label>
+        <label>Message<textarea name="message" rows="3">Bonjour, j'aimerais visiter cette propriété.</textarea></label>
+        <button class="btn" type="submit">Demander une visite</button>
+      </form>
+      <a href="/outils/#hypotheque" class="lien">Calculer mes paiements hypothécaires →</a>
+    </aside>
+  </div>
+</div>

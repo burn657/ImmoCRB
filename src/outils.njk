@@ -1,0 +1,58 @@
+---
+layout: base.njk
+title: Outils immobiliers
+permalink: /outils/
+---
+<div class="conteneur section">
+  <h1>Outils immobiliers</h1>
+  <p class="sous">Des calculs rapides pour planifier votre achat. Les résultats sont des estimations : votre institution financière et votre notaire confirmeront les montants exacts.</p>
+
+  <section id="hypotheque" class="outil-bloc">
+    <h2>Calculatrice hypothécaire</h2>
+    <form class="formulaire calc" id="f-hypo">
+      <div class="grille-champs">
+        <label>Prix de la propriété ($)<input type="number" id="h-prix" value="400000" min="0" step="1000"></label>
+        <label>Mise de fonds ($)<input type="number" id="h-mise" value="40000" min="0" step="1000"></label>
+        <label>Taux d'intérêt (%)<input type="number" id="h-taux" value="4.5" min="0" step="0.05"></label>
+        <label>Amortissement (années)<select id="h-amort"><option>15</option><option>20</option><option selected>25</option><option>30</option></select></label>
+      </div>
+    </form>
+    <div class="resultat" aria-live="polite">
+      <p>Paiement mensuel estimé</p>
+      <p class="resultat__chiffre" id="h-res">—</p>
+      <p class="petit" id="h-detail"></p>
+    </div>
+  </section>
+
+  <section id="mutation" class="outil-bloc">
+    <h2>Taxe de bienvenue (droits de mutation)</h2>
+    <form class="formulaire calc" id="f-mut">
+      <label>Prix d'achat ($)<input type="number" id="m-prix" value="400000" min="0" step="1000"></label>
+    </form>
+    <div class="resultat" aria-live="polite">
+      <p>Taxe de bienvenue estimée</p>
+      <p class="resultat__chiffre" id="m-res">—</p>
+      <p class="petit">Selon les tranches {{ taxe.annee }} applicables hors Montréal. Certaines municipalités appliquent des taux plus élevés au-delà de 500 000 $.</p>
+    </div>
+  </section>
+
+  <section id="alerte" class="outil-bloc">
+    <h2>Alerte immobilière</h2>
+    <p class="sous">Dites-moi ce que vous cherchez. Je vous écris dès qu'une maison correspond, souvent avant sa mise en ligne.</p>
+    <form name="alerte" method="POST" action="/merci/" data-netlify="true" netlify-honeypot="champ-robot" class="formulaire">
+      <input type="hidden" name="form-name" value="alerte">
+      <p class="cache"><label>Ne pas remplir <input name="champ-robot"></label></p>
+      <div class="grille-champs">
+        <label>Villes ou secteurs<input type="text" name="secteurs" required></label>
+        <label>Budget maximum ($)<input type="number" name="budget" min="0" step="1000"></label>
+        <label>Type<select name="type"><option>Peu importe</option><option>Maison</option><option>Condo</option><option>Chalet</option><option>Plex</option><option>Terrain</option></select></label>
+        <label>Chambres minimum<input type="number" name="chambres" min="0"></label>
+        <label>Nom<input type="text" name="nom" required autocomplete="name"></label>
+        <label>Courriel<input type="email" name="courriel" required autocomplete="email"></label>
+      </div>
+      <button type="submit" class="btn">Créer mon alerte</button>
+    </form>
+  </section>
+</div>
+<script>window.TRANCHES = {{ taxe.tranches | dump | safe }};</script>
+<script src="/js/calculatrices.js"></script>

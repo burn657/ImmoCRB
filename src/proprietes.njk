@@ -1,0 +1,23 @@
+---
+layout: base.njk
+title: Mes propriétés
+permalink: /proprietes/
+---
+<div class="conteneur section">
+  <h1>Mes propriétés</h1>
+  <p class="sous">Toutes les maisons que je représente, à vendre et vendues récemment.</p>
+  <div class="filtres" role="group" aria-label="Filtrer par statut">
+    <button type="button" class="filtre actif" data-f="tous">Toutes</button>
+    <button type="button" class="filtre" data-f="a_vendre">À vendre</button>
+    <button type="button" class="filtre" data-f="vendu">Vendues</button>
+  </div>
+  <div class="grille-cartes" id="liste">
+    {% for p in collections.proprietes %}<div data-statut="{{ p.data.statut }}">{% include "carte.njk" %}</div>{% else %}<p>Aucune propriété pour le moment. Revenez bientôt !</p>{% endfor %}
+  </div>
+</div>
+<script>
+  document.querySelectorAll('.filtre').forEach(b => b.addEventListener('click', () => {
+    document.querySelectorAll('.filtre').forEach(x => x.classList.toggle('actif', x === b));
+    document.querySelectorAll('#liste > [data-statut]').forEach(c => { c.hidden = b.dataset.f !== 'tous' && c.dataset.statut !== b.dataset.f; });
+  }));
+</script>

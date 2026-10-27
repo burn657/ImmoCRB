@@ -1,0 +1,15 @@
+<section class="bande">
+  <div class="conteneur section section--courte bande__in">
+    <div>
+      <h2>Besoin d'une réponse rapide&nbsp;?</h2>
+      <p>Laissez votre numéro, je vous rappelle dans la journée.</p>
+    </div>
+    <form name="rappel" method="POST" action="/merci/" data-netlify="true" netlify-honeypot="champ-robot" class="bande__form">
+      <input type="hidden" name="form-name" value="rappel">
+      <p class="cache"><label>Ne pas remplir <input name="champ-robot"></label></p>
+      <label>Votre nom<input type="text" name="nom" required autocomplete="name"></label>
+      <label>Téléphone<input type="tel" name="telephone" required autocomplete="tel"></label>
+      <button type="submit" class="btn btn--sombre">Me rappeler</button>
+    </form>
+  </div>
+</section>
