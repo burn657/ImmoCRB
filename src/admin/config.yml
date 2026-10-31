@@ -2,7 +2,7 @@
 # Connexion avec GitHub, via le fournisseur OAuth de Netlify.
 backend:
   name: github
-  repo: burn657/immocrb
+  repo: burn657/ImmoCRB
   branch: main
   commit_messages:
     create: "Ajout de {{collection}} « {{slug}} »"
