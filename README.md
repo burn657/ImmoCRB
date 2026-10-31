@@ -17,7 +17,7 @@ Site web immobilier d'ImmoCRB : propriétés à vendre, demande d'estimation, ca
 
 1. Créez un compte gratuit sur [netlify.com](https://www.netlify.com/) avec votre compte GitHub.
 2. **Add new site → Import an existing project → GitHub**, choisissez le dépôt `immocrb`. Les réglages de construction sont lus dans `netlify.toml`.
-3. Connexion à l'admin : dans GitHub, **Settings → Developer settings → OAuth Apps → New OAuth App**, avec l'URL de rappel `https://api.netlify.com/auth/done`. Copiez le Client ID et le secret dans Netlify : **Site configuration → Access & security → OAuth → Install provider → GitHub**.
+3. Connexion à l'admin : dans GitHub, **Settings → Developer settings → OAuth Apps → New OAuth App**, avec l'URL de rappel `https://api.netlify.com/auth/done`. Copiez le Client ID et le secret dans Netlify : **Project configuration → Security → OAuth → Install Provider → GitHub**.
 4. Formulaires : dans Netlify, **Forms → Enable form detection**, puis redéployez. Ajoutez votre courriel dans **Forms → Form notifications** pour recevoir les demandes (estimation, visite, rappel, alerte, contact).
 5. Nom de domaine : **Domain management → Add a domain** (immocrb.ca ou immocrb.com, environ 20 $ par an). Le HTTPS est automatique.
 
