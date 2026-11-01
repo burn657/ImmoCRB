@@ -1,3 +1,7 @@
+import markdownIt from "markdown-it";
+
+const md = markdownIt({ html: false, linkify: true, typographer: false });
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
@@ -29,6 +33,8 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("statutLabel", (s) =>
     ({ a_vendre: "À vendre", vendu: "Vendu", masque: "Masqué" })[s] || ""
   );
+
+  eleventyConfig.addFilter("md", (texte) => md.render(texte || ""));
 
   eleventyConfig.addFilter("youtubeId", (url) => {
     if (!url) return "";
