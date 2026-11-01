@@ -1,6 +1,8 @@
 ---
 layout: base.njk
 title: À propos
+titreComplet: "À propos | ImmoCRB, courtier immobilier résidentiel à Montréal, Laval et Rive-Nord"
+description: "Claude-René Brûlé, courtier immobilier résidentiel chez Via Capitale. Achat et vente de maisons unifamiliales, copropriétés, terrains résidentiels et plex de moins de 5 logements à Montréal, Laval, Rive-Nord, Laurentides et Lanaudière."
 permalink: /a-propos/
 ---
 <div class="conteneur section apropos">
@@ -8,7 +10,9 @@ permalink: /a-propos/
   <div class="apropos__texte">
     <p class="surtitre">{{ site.titre }}</p>
     <h1>{{ site.courtier }}</h1>
-    <p class="intro">{{ site.apropos }}</p>
+    <h2>À propos</h2>
+    <div class="apropos__corps">{{ (site.apropos_complet or site.apropos) | md | safe }}</div>
+    <p><a href="/contact/" class="btn">Discuter de votre projet</a></p>
     <p class="sous">{{ site.agence }} · Permis OACIQ {{ site.permis }} · {{ site.region }}</p>
   </div>
 </div>
