@@ -14,7 +14,7 @@ layout: base.njk
     </div>
     <div class="heros__photo">
       {% set une = collections.proprietes | first %}
-      {% if une and une.data.photo_principale %}<img src="{{ une.data.photo_principale }}" alt="{{ une.data.titre }}">{% else %}<span>Photo à venir</span>{% endif %}
+      {% if site.image_accueil %}<img src="{{ site.image_accueil }}" alt="Remise des clés devant une maison">{% elif une and une.data.photo_principale %}<img src="{{ une.data.photo_principale }}" alt="{{ une.data.titre }}">{% else %}<span>Photo à venir</span>{% endif %}
     </div>
   </div>
 </section>
