@@ -21,7 +21,7 @@ permalink: /a-propos/
     <h2>Ce que mes clients en disent</h2>
     <div class="grille-temoignages">
       {% for t in temoignages.liste %}
-      <blockquote class="temoignage temoignage--blanc"><p>« {{ t.texte }} »</p><footer>{{ t.auteur }}, {{ t.ville }}</footer></blockquote>
+      <blockquote class="temoignage temoignage--blanc"><p>« {{ t.texte }} »</p><footer>{{ t.auteur }}{% if t.ville %}, {{ t.ville }}{% endif %}</footer></blockquote>
       {% endfor %}
     </div>
   </div>

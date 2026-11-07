@@ -47,7 +47,7 @@ layout: base.njk
     <p class="intro">{{ site.apropos }}</p>
     {% set t = temoignages.liste | first %}
     {% if t %}
-    <blockquote class="temoignage"><p>« {{ t.texte }} »</p><footer>{{ t.auteur }}, {{ t.ville }}</footer></blockquote>
+    <blockquote class="temoignage"><p>« {{ t.texte }} »</p><footer>{{ t.auteur }}{% if t.ville %}, {{ t.ville }}{% endif %}</footer></blockquote>
     {% endif %}
     <a href="/a-propos/" class="lien">Lire tous les témoignages →</a>
   </div>

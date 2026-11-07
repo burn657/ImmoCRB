@@ -93,7 +93,7 @@ collections:
             fields:
               - { label: Texte, name: texte, widget: text }
               - { label: Prénom du client, name: auteur, widget: string }
-              - { label: Ville, name: ville, widget: string }
+              - { label: Ville, name: ville, widget: string, required: false }
       - name: taxe
         label: Taxe de bienvenue (tranches)
         file: src/_data/taxe.json

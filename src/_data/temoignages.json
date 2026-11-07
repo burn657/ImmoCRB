@@ -1,5 +1,34 @@
 {
   "liste": [
-    { "texte": "[Témoignage d'un client]", "auteur": "[Prénom du client]", "ville": "[Ville]" }
+    {
+      "texte": "Expérience parfaite, mon courtier (Claude) a surpassé mes attentes et nous a accompagnés du début a la fin. Il était pro actif et devançait les événements. Il est une machine d’engagement envers ses clients. Merci mon ami.",
+      "auteur": "Bertrand",
+      "ville": ""
+    },
+    {
+      "texte": "Nous avons trouvé M. Brulé professionnel, efficace, honnête et transparent tout au long de la démarche de vente du condo. Nous avons adoré l’approche et la vision qu’il avait pour la vente de notre propriété. Nous le recommandons sans aucun doute!!!",
+      "auteur": "Céline",
+      "ville": ""
+    },
+    {
+      "texte": "Monsieur Brulé était disponible, poli, serviable et souriant.",
+      "auteur": "Ginette",
+      "ville": ""
+    },
+    {
+      "texte": "Il est très pro-actif dévoué répond toujours à nos questions je le recommande sans aucun hésitation un service or paire merci beaucoup",
+      "auteur": "Mario",
+      "ville": ""
+    },
+    {
+      "texte": "M. Brulé fait un très bon travail.",
+      "auteur": "Nicole",
+      "ville": ""
+    },
+    {
+      "texte": "Claude nous a superbement aidé à l’achat de notre première maison en étant toujours rejoignable et en nous aidant avec toutes les étapes. Merci encore!",
+      "auteur": "Philippe",
+      "ville": ""
+    }
   ]
 }
