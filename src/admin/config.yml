@@ -77,6 +77,7 @@ collections:
           - { label: Adresse du bureau, name: adresse, widget: string }
           - { label: Région desservie, name: region, widget: string }
           - { label: Votre photo, name: photo, widget: image, required: false }
+          - { label: Image de la page d'accueil, name: image_accueil, widget: image, required: false }
           - { label: Texte « À propos » court (page d'accueil), name: apropos, widget: text }
           - { label: Texte « À propos » complet (page À propos), name: apropos_complet, widget: markdown, buttons: [bold, italic, link, bulleted-list], editor_components: [] }
           - { label: Lien Facebook, name: facebook, widget: string, required: false }
@@ -92,7 +93,7 @@ collections:
             fields:
               - { label: Texte, name: texte, widget: text }
               - { label: Prénom du client, name: auteur, widget: string }
-              - { label: Ville, name: ville, widget: string }
+              - { label: Ville, name: ville, widget: string, required: false }
       - name: taxe
         label: Taxe de bienvenue (tranches)
         file: src/_data/taxe.json

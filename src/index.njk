@@ -5,7 +5,7 @@ layout: base.njk
   <div class="conteneur section heros">
     <div class="heros__texte">
       <p class="surtitre">{{ site.courtier }}, {{ site.titre | lower }}</p>
-      <h1>Acheter ou vendre votre maison, avec quelqu'un qui connaît le coin.</h1>
+      <h1>Acheter ou vendre votre maison, avec quelqu'un qui connaît vos besoins.</h1>
       <p class="intro">Découvrez mes propriétés à vendre, estimez la valeur de votre maison et trouvez les réponses à vos questions, au même endroit.</p>
       <div class="boutons">
         <a href="/proprietes/" class="btn">Voir mes propriétés</a>
@@ -14,7 +14,7 @@ layout: base.njk
     </div>
     <div class="heros__photo">
       {% set une = collections.proprietes | first %}
-      {% if une and une.data.photo_principale %}<img src="{{ une.data.photo_principale }}" alt="{{ une.data.titre }}">{% else %}<span>Photo à venir</span>{% endif %}
+      {% if site.image_accueil %}<img src="{{ site.image_accueil }}" alt="Remise des clés devant une maison">{% elif une and une.data.photo_principale %}<img src="{{ une.data.photo_principale }}" alt="{{ une.data.titre }}">{% else %}<span>Photo à venir</span>{% endif %}
     </div>
   </div>
 </section>
@@ -47,7 +47,7 @@ layout: base.njk
     <p class="intro">{{ site.apropos }}</p>
     {% set t = temoignages.liste | first %}
     {% if t %}
-    <blockquote class="temoignage"><p>« {{ t.texte }} »</p><footer>{{ t.auteur }}, {{ t.ville }}</footer></blockquote>
+    <blockquote class="temoignage"><p>« {{ t.texte }} »</p><footer>{{ t.auteur }}{% if t.ville %}, {{ t.ville }}{% endif %}</footer></blockquote>
     {% endif %}
     <a href="/a-propos/" class="lien">Lire tous les témoignages →</a>
   </div>
