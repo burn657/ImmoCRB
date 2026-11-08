@@ -31,7 +31,7 @@ export default function (eleventyConfig) {
   );
 
   eleventyConfig.addFilter("statutLabel", (s) =>
-    ({ a_vendre: "À vendre", vendu: "Vendu", masque: "Masqué" })[s] || ""
+    ({ a_vendre: "À vendre", vendu: "Vendu", achete: "Acheté", masque: "Masqué" })[s] || ""
   );
 
   eleventyConfig.addFilter("md", (texte) => md.render(texte || ""));

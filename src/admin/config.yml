@@ -30,6 +30,7 @@ collections:
     view_filters:
       - { label: À vendre, field: statut, pattern: a_vendre }
       - { label: Vendues, field: statut, pattern: vendu }
+      - { label: Achetées, field: statut, pattern: achete }
       - { label: Masquées, field: statut, pattern: masque }
     preview_path: "proprietes/{{slug}}"
     fields:
@@ -41,6 +42,7 @@ collections:
         options:
           - { label: À vendre, value: a_vendre }
           - { label: Vendu, value: vendu }
+          - { label: Acheté (pour un client acheteur), value: achete }
           - { label: "Masqué (gardé en réserve, invisible sur le site)", value: masque }
       - { label: "En vedette sur l'accueil", name: vedette, widget: boolean, default: false }
       - { label: "Date d'ajout", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
@@ -77,6 +79,7 @@ collections:
           - { label: Adresse du bureau, name: adresse, widget: string }
           - { label: Région desservie, name: region, widget: string }
           - { label: Votre photo, name: photo, widget: image, required: false }
+          - { label: Image de la page d'accueil, name: image_accueil, widget: image, required: false }
           - { label: Texte « À propos » court (page d'accueil), name: apropos, widget: text }
           - { label: Texte « À propos » complet (page À propos), name: apropos_complet, widget: markdown, buttons: [bold, italic, link, bulleted-list], editor_components: [] }
           - { label: Lien Facebook, name: facebook, widget: string, required: false }
@@ -92,7 +95,7 @@ collections:
             fields:
               - { label: Texte, name: texte, widget: text }
               - { label: Prénom du client, name: auteur, widget: string }
-              - { label: Ville, name: ville, widget: string }
+              - { label: Ville, name: ville, widget: string, required: false }
       - name: taxe
         label: Taxe de bienvenue (tranches)
         file: src/_data/taxe.json

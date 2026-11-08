@@ -5,11 +5,12 @@ permalink: /proprietes/
 ---
 <div class="conteneur section">
   <h1>Mes propriétés</h1>
-  <p class="sous">Toutes les maisons que je représente, à vendre et vendues récemment.</p>
+  <p class="sous">Toutes les maisons que je représente, à vendre, vendues et achetées pour mes clients.</p>
   <div class="filtres" role="group" aria-label="Filtrer par statut">
     <button type="button" class="filtre actif" data-f="tous">Toutes</button>
     <button type="button" class="filtre" data-f="a_vendre">À vendre</button>
     <button type="button" class="filtre" data-f="vendu">Vendues</button>
+    <button type="button" class="filtre" data-f="achete">Achetées</button>
   </div>
   <div class="grille-cartes" id="liste">
     {% for p in collections.proprietes %}<div data-statut="{{ p.data.statut }}">{% include "carte.njk" %}</div>{% else %}<p>Aucune propriété pour le moment. Revenez bientôt !</p>{% endfor %}
