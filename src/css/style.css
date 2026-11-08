@@ -172,3 +172,7 @@ p { margin: 0 0 1em; }
 .pied__nom { font-size: 22px; font-weight: 800; color: #fff; }
 .pied__social { display: flex; gap: 16px; }
 .pied a { color: #fff; }
+
+/* Mention « VENDUE » en diagonale sur la photo des propriétés vendues */
+.carte__photo, .galerie__principale { position: relative; container-type: size; }
+.sceau-vendu { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-28deg); font-size: clamp(24px, min(13cqw, 24cqh), 120px); font-weight: 800; letter-spacing: .08em; line-height: 1; color: rgba(220, 30, 30, .55); border: .06em solid rgba(220, 30, 30, .55); border-radius: .08em; padding: .05em .2em; pointer-events: none; white-space: nowrap; }

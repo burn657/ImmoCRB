@@ -7,6 +7,7 @@ layout: base.njk
   <div class="galerie">
     <div class="galerie__principale">
       {% if photo_principale %}<img src="{{ photo_principale }}" alt="{{ titre }}">{% else %}<span>Photo à venir</span>{% endif %}
+      {% if statut == 'vendu' %}<span class="sceau-vendu" aria-hidden="true">VENDUE</span>{% endif %}
     </div>
     {% for ph in photos %}
     <a href="{{ ph }}" class="galerie__vignette"><img src="{{ ph }}" alt="Photo {{ loop.index + 1 }} de {{ titre }}" loading="lazy"></a>

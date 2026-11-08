@@ -1,6 +1,7 @@
 <a href="{{ p.url }}" class="carte">
   <div class="carte__photo">
     {% if p.data.photo_principale %}<img src="{{ p.data.photo_principale }}" alt="{{ p.data.titre }}" loading="lazy">{% else %}<span>Photo à venir</span>{% endif %}
+    {% if p.data.statut == 'vendu' %}<span class="sceau-vendu" aria-hidden="true">VENDUE</span>{% endif %}
     <span class="pastille{% if p.data.statut == 'vendu' %} pastille--vendu{% endif %}">{{ p.data.statut | statutLabel }}</span>
   </div>
   <div class="carte__corps">
