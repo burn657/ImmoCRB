@@ -3,8 +3,8 @@ titre: "Cottage en brique avec garage double, près de tous les services"
 statut: vendu
 vedette: true
 date: 2026-09-14
-prix: 725000
-adresse: "1358, rue Vivaldi"
+prix:
+adresse: ""
 ville: "Repentigny"
 type: Maison
 chambres: 4
@@ -12,9 +12,10 @@ sdb: 3
 superficie: "2 228 pi²"
 terrain: "6 331 pi²"
 annee: 2001
-centris: "16822886"
-photo_principale: "/images/uploads/1358-vivaldi-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/repentigny-cottage-brique.jpg"
 photos: []
+description: "Cottage en brique avec garage double vendu en 60 jours à Repentigny : 4 chambres, 3 salles de bain, sous-sol aménagé. Claude-René Brûlé, courtier immobilier."
 video: ""
 ---
 Magnifique cottage d'exception dans un quartier résidentiel très convoité de Repentigny, alliant prestance, confort et proximité de tous les services. Vendu en 60 jours.

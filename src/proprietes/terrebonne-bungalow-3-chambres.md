@@ -3,8 +3,8 @@ titre: "Bungalow de 3 chambres dans un secteur familial de Terrebonne"
 statut: achete
 vedette: true
 date: 2026-07-21
-prix: 499900
-adresse: "Rue de Lévrard"
+prix:
+adresse: ""
 ville: "Terrebonne"
 type: Maison
 chambres: 3
@@ -12,9 +12,10 @@ sdb: 1
 superficie: ""
 terrain: "4 500 pi²"
 annee: 1981
-centris: "13237378"
-photo_principale: "/images/uploads/levrard-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/terrebonne-bungalow.jpg"
 photos: []
+description: "Bungalow en brique de 3 chambres, acheté dans un secteur familial de Terrebonne pour un client de Claude-René Brûlé, courtier immobilier."
 video: ""
 ---
 Charmant bungalow en brique, impeccablement entretenu, dans le secteur familial recherché de Saint-Louis/Hauteville à Terrebonne.

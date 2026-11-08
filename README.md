@@ -11,7 +11,8 @@ Site web immobilier d'ImmoCRB : propriétés à vendre, demande d'estimation, ca
 1. Allez sur `https://<votre-site>/admin/` et connectez-vous avec GitHub.
 2. **Propriétés** : ajoutez, modifiez ou supprimez une maison. Le statut « Masqué » la garde en réserve sans l'afficher. Cochez « En vedette » pour la montrer sur l'accueil.
 3. **Réglages du site** : vos coordonnées, votre photo, le texte « À propos », les témoignages et les tranches de la taxe de bienvenue (à mettre à jour chaque 1er janvier).
-4. Cliquez sur **Publier**. Le site se met à jour tout seul en une à deux minutes.
+4. Une propriété **vendue** ou **achetée** n'affiche que sa ville : le prix, l'adresse et le numéro Centris sont cachés automatiquement. Le champ « Description pour Google » donne le texte des résultats Google et des aperçus Facebook.
+5. Cliquez sur **Publier**. Le site se met à jour tout seul en une à deux minutes.
 
 ## Mise en ligne (une seule fois)
 
@@ -21,6 +22,12 @@ Site web immobilier d'ImmoCRB : propriétés à vendre, demande d'estimation, ca
 4. Formulaires : dans Netlify, **Forms → Enable form detection**, puis redéployez. Ajoutez votre courriel dans **Forms → Form notifications** pour recevoir les demandes (estimation, visite, rappel, alerte, contact).
 5. Nom de domaine : **Domain management → Add a domain** (immocrb.ca ou immocrb.com, environ 20 $ par an). Le HTTPS est automatique.
 
+## Référencement
+
+- Plan du site : `/sitemap.xml` (à soumettre dans Google Search Console), robots : `/robots.txt`.
+- Aperçus de partage (Facebook, Messenger, etc.) : photo principale de la fiche, sinon `src/images/apercu-partage.jpg`.
+- Politique de confidentialité (Loi 25) : `/confidentialite/`, liée sous chaque formulaire.
+
 ## Développement
 
 ```bash
@@ -29,4 +36,4 @@ npm start      # aperçu local sur http://localhost:8080
 npm run build  # génère le site dans _site/
 ```
 
-Les propriétés sont des fichiers Markdown dans `src/proprietes/`, les réglages des fichiers JSON dans `src/_data/`. Les deux fiches « Exemple » peuvent être supprimées depuis l'admin.
+Les propriétés sont des fichiers Markdown dans `src/proprietes/`, les réglages des fichiers JSON dans `src/_data/`. 

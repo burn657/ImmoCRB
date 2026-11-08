@@ -4,3 +4,50 @@
 
 [build.environment]
   NODE_VERSION = "22"
+
+# Anciennes adresses des fiches (avant novembre 2026) vers les nouvelles,
+# qui ne contiennent plus de numéro civique ni de nom de rue.
+[[redirects]]
+  from = "/proprietes/11-42e-avenue-bois-des-filion/"
+  to = "/proprietes/bois-des-filion-duplex-renove/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/1315-rue-van-gogh-repentigny/"
+  to = "/proprietes/repentigny-residence-prestige-piscine/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/1358-rue-vivaldi-repentigny/"
+  to = "/proprietes/repentigny-cottage-brique-garage-double/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/170-rue-des-champs-fleuris-sainte-sophie/"
+  to = "/proprietes/sainte-sophie-plain-pied-5-chambres/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/170-rue-hogue-sainte-anne-des-plaines/"
+  to = "/proprietes/sainte-anne-des-plaines-maison-paliers-piscine/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/591-rue-de-pompadour-mascouche/"
+  to = "/proprietes/mascouche-condo-contemporain/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/6408-rue-pageau-laval/"
+  to = "/proprietes/laval-auteuil-jumele-cuisine-renovee/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/avenue-hochar-saint-sauveur/"
+  to = "/proprietes/saint-sauveur-condo-ski/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/chemin-saint-charles-terrebonne/"
+  to = "/proprietes/terrebonne-lachenaie-condo-riviere/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/rue-de-l-eclipse-terrebonne/"
+  to = "/proprietes/terrebonne-la-plaine-maison-paliers-garage/"
+  status = 301
+[[redirects]]
+  from = "/proprietes/rue-de-levrard-terrebonne/"
+  to = "/proprietes/terrebonne-bungalow-3-chambres/"
+  status = 301

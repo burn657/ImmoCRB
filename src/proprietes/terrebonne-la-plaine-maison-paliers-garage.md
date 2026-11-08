@@ -3,8 +3,8 @@ titre: "Maison à paliers avec garage et immense terrain à La Plaine"
 statut: achete
 vedette: true
 date: 2026-08-13
-prix: 649000
-adresse: "Rue de l'Éclipse"
+prix:
+adresse: ""
 ville: "Terrebonne (La Plaine)"
 type: Maison
 chambres: 3
@@ -12,9 +12,10 @@ sdb: 2
 superficie: ""
 terrain: "12 000 pi²"
 annee: 1990
-centris: "19110372"
-photo_principale: "/images/uploads/eclipse-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/terrebonne-la-plaine-paliers.jpg"
 photos: []
+description: "Maison à paliers avec garage et terrain de 12 000 pi², achetée à La Plaine (Terrebonne) pour un client de Claude-René Brûlé, courtier immobilier."
 video: ""
 ---
 Chaleureuse maison à paliers multiples en brique, dans un secteur recherché de La Plaine, près de tous les services.

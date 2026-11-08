@@ -7,7 +7,7 @@ permalink: /contact/
   <div class="estimation__texte">
     <h1>Me contacter</h1>
     <p class="intro">Une question, un projet d'achat ou de vente&nbsp;? Écrivez-moi ou appelez-moi.</p>
-    <p><strong>{{ site.telephone }}</strong><br>{{ site.courriel }}<br>{{ site.adresse }}</p>
+    <p><strong><a href="tel:+1{{ site.telephone | replace('-', '') }}">{{ site.telephone }}</a></strong><br><a href="mailto:{{ site.courriel }}">{{ site.courriel }}</a><br>{{ site.adresse }}</p>
     <p class="sous">Région desservie : {{ site.region }}</p>
   </div>
   <form name="contact" method="POST" action="/merci/" data-netlify="true" netlify-honeypot="champ-robot" class="formulaire carte-blanche">
@@ -20,5 +20,6 @@ permalink: /contact/
     </div>
     <label>Message<textarea name="message" rows="5" required></textarea></label>
     <button type="submit" class="btn">Envoyer</button>
+    <p class="sous petit mention">Vos renseignements servent uniquement à répondre à votre demande. <a href="/confidentialite/">Politique de confidentialité</a></p>
   </form>
 </div>

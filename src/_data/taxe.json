@@ -1,9 +1,9 @@
 {
-  "annee": 2025,
-  "note": "Tranches de la taxe de bienvenue (droits de mutation) hors Montréal. À vérifier et mettre à jour chaque 1er janvier.",
+  "annee": 2026,
+  "note": "Tranches de la taxe de bienvenue (droits de mutation) hors Montréal (seuils indexés de 2026 : 62 900 $ et 315 000 $). À vérifier et mettre à jour chaque 1er janvier.",
   "tranches": [
-    { "jusqua": 61500, "taux": 0.005 },
-    { "jusqua": 307800, "taux": 0.01 },
+    { "jusqua": 62900, "taux": 0.005 },
+    { "jusqua": 315000, "taux": 0.01 },
     { "jusqua": null, "taux": 0.015 }
   ]
 }

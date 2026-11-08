@@ -3,8 +3,8 @@ titre: "Plain-pied de 5 chambres avec piscine semi-creusée chauffée"
 statut: vendu
 vedette: true
 date: 2026-08-23
-prix: 559900
-adresse: "170, rue des Champs-Fleuris"
+prix:
+adresse: ""
 ville: "Sainte-Sophie"
 type: Maison
 chambres: 5
@@ -12,9 +12,10 @@ sdb: 2
 superficie: "917 pi² au sol"
 terrain: "5 903 pi²"
 annee: 2017
-centris: "9084494"
-photo_principale: "/images/uploads/170-champs-fleuris-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/sainte-sophie-plain-pied.jpg"
 photos: []
+description: "Plain-pied de 5 chambres avec piscine semi-creusée chauffée, vendu à Sainte-Sophie par Claude-René Brûlé, courtier immobilier résidentiel."
 video: ""
 ---
 Superbe plain-pied parfaitement entretenu, au cœur d'un quartier résidentiel familial et paisible de Sainte-Sophie.

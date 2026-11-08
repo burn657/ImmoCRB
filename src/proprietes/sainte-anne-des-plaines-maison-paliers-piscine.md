@@ -13,8 +13,9 @@ superficie: "1 249 pi²"
 terrain: "5 775 pi²"
 annee: 1992
 centris: "24983257"
-photo_principale: "/images/uploads/170-hogue-facade.jpg"
+photo_principale: "/images/uploads/sainte-anne-des-plaines-paliers.jpg"
 photos: []
+description: "Maison à paliers à vendre à Sainte-Anne-des-Plaines : 3 chambres, 2 salles de bain, piscine creusée chauffée, aucun voisin arrière. 544 500 $."
 video: ""
 ---
 Vous cherchez le parfait équilibre entre la tranquillité de la campagne et la proximité des services ? Cette superbe maison à paliers multiples, située dans un secteur familial et recherché de Sainte-Anne-des-Plaines, a tout pour vous plaire.

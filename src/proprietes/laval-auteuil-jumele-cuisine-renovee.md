@@ -3,8 +3,8 @@ titre: "Jumelé à étage avec cuisine rénovée à Auteuil"
 statut: vendu
 vedette: true
 date: 2026-02-04
-prix: 559000
-adresse: "6408, rue Pageau"
+prix:
+adresse: ""
 ville: "Laval (Auteuil)"
 type: Maison
 chambres: 2
@@ -12,9 +12,10 @@ sdb: 2
 superficie: "1 016 pi²"
 terrain: "2 169 pi²"
 annee: 1998
-centris: "22864562"
-photo_principale: "/images/uploads/6408-pageau-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/laval-auteuil-jumele.jpg"
 photos: []
+description: "Jumelé à étage vendu à Auteuil, Laval : 2 chambres, cuisine rénovée en 2023, sous-sol aménagé. Claude-René Brûlé, courtier immobilier résidentiel."
 video: ""
 ---
 Superbe maison à étage jumelée dans le secteur recherché d'Auteuil, à Laval. Idéale pour une vie familiale, elle allie confort, modernité et fonctionnalité.
