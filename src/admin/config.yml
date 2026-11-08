@@ -30,6 +30,7 @@ collections:
     view_filters:
       - { label: À vendre, field: statut, pattern: a_vendre }
       - { label: Vendues, field: statut, pattern: vendu }
+      - { label: Achetées, field: statut, pattern: achete }
       - { label: Masquées, field: statut, pattern: masque }
     preview_path: "proprietes/{{slug}}"
     fields:
@@ -41,6 +42,7 @@ collections:
         options:
           - { label: À vendre, value: a_vendre }
           - { label: Vendu, value: vendu }
+          - { label: Acheté (pour un client acheteur), value: achete }
           - { label: "Masqué (gardé en réserve, invisible sur le site)", value: masque }
       - { label: "En vedette sur l'accueil", name: vedette, widget: boolean, default: false }
       - { label: "Date d'ajout", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }

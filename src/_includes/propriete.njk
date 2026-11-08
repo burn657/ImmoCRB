@@ -7,7 +7,7 @@ layout: base.njk
   <div class="galerie">
     <div class="galerie__principale">
       {% if photo_principale %}<img src="{{ photo_principale }}" alt="{{ titre }}">{% else %}<span>Photo à venir</span>{% endif %}
-      {% if statut == 'vendu' %}<span class="sceau-vendu" aria-hidden="true">VENDUE</span>{% endif %}
+      {% if statut == 'vendu' %}<span class="sceau-vendu" aria-hidden="true">VENDUE</span>{% elif statut == 'achete' %}<span class="sceau-vendu" aria-hidden="true">ACHETÉ</span>{% endif %}
     </div>
     {% for ph in photos %}
     <a href="{{ ph }}" class="galerie__vignette"><img src="{{ ph }}" alt="Photo {{ loop.index + 1 }} de {{ titre }}" loading="lazy"></a>
@@ -16,7 +16,7 @@ layout: base.njk
 
   <div class="fiche">
     <div class="fiche__contenu">
-      <span class="pastille pastille--statique{% if statut == 'vendu' %} pastille--vendu{% endif %}">{{ statut | statutLabel }}</span>
+      <span class="pastille pastille--statique{% if statut in ['vendu','achete'] %} pastille--vendu{% endif %}">{{ statut | statutLabel }}</span>
       <h1 class="fiche__titre">{{ titre }}</h1>
       <p class="sous">{{ adresse }}, {{ ville }}</p>
       <p class="fiche__prix">{{ prix | prix }}</p>
