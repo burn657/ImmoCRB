@@ -1,12 +1,15 @@
+{% set enVente = p.data.statut == 'a_vendre' %}
 <a href="{{ p.url }}" class="carte">
   <div class="carte__photo">
-    {% if p.data.photo_principale %}<img src="{{ p.data.photo_principale }}" alt="{{ p.data.titre }}" loading="lazy">{% else %}<span>Photo à venir</span>{% endif %}
+    {% if p.data.photo_principale %}<img src="{{ p.data.photo_principale }}" alt="{{ p.data.titre }}" loading="lazy" decoding="async">{% else %}<span>Photo à venir</span>{% endif %}
     {% if p.data.statut == 'vendu' %}<span class="sceau-vendu" aria-hidden="true">VENDUE</span>{% elif p.data.statut == 'achete' %}<span class="sceau-vendu" aria-hidden="true">ACHETÉ</span>{% endif %}
-    <span class="pastille{% if p.data.statut in ['vendu','achete'] %} pastille--vendu{% endif %}">{{ p.data.statut | statutLabel }}</span>
+    <span class="pastille{% if not enVente %} pastille--vendu{% endif %}">{{ p.data.statut | statutLabel }}</span>
   </div>
   <div class="carte__corps">
-    <p class="carte__prix">{{ p.data.prix | prix }}</p>
+    {% if enVente %}<p class="carte__prix">{{ p.data.prix | prix }}</p>
     <p class="carte__titre">{{ p.data.type }} · {{ p.data.ville }}</p>
+    {% else %}<p class="carte__prix">{{ p.data.ville }}</p>
+    <p class="carte__titre">{{ p.data.type }}</p>{% endif %}
     <p class="carte__specs">{% if p.data.chambres %}{{ p.data.chambres }} chambre{% if p.data.chambres > 1 %}s{% endif %}{% endif %}{% if p.data.sdb %} · {{ p.data.sdb }} salle{% if p.data.sdb > 1 %}s{% endif %} de bain{% endif %}</p>
   </div>
 </a>

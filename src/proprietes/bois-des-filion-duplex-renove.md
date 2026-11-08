@@ -3,8 +3,8 @@ titre: "Duplex entièrement rénové en 2024 avec grande terrasse couverte"
 statut: vendu
 vedette: true
 date: 2026-03-27
-prix: 599500
-adresse: "11-11A, 42e Avenue"
+prix:
+adresse: ""
 ville: "Bois-des-Filion"
 type: Plex
 chambres: 5
@@ -12,9 +12,10 @@ sdb: 3
 superficie: "2 184 pi²"
 terrain: "4 250 pi²"
 annee: 1940
-centris: "19858782"
-photo_principale: "/images/uploads/42e-avenue-bois-des-filion-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/bois-des-filion-duplex.jpg"
 photos: []
+description: "Duplex entièrement rénové en 2024 à Bois-des-Filion, vendu par Claude-René Brûlé, courtier immobilier : 5 chambres, 3 salles de bain, grande terrasse couverte."
 video: ""
 ---
 Duplex locatif d'exception à Bois-des-Filion, transformé et rénové de façon majeure en 2024 : fondation, charpente, toiture, fenêtres, isolation, électricité, plomberie, cuisines, salles de bain et planchers.

@@ -46,8 +46,8 @@ collections:
           - { label: "Masqué (gardé en réserve, invisible sur le site)", value: masque }
       - { label: "En vedette sur l'accueil", name: vedette, widget: boolean, default: false }
       - { label: "Date d'ajout", name: date, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
-      - { label: "Prix ($)", name: prix, widget: number, value_type: int, required: false, hint: "Laissez vide pour afficher « Prix sur demande »" }
-      - { label: Adresse, name: adresse, widget: string }
+      - { label: "Prix ($)", name: prix, widget: number, value_type: int, required: false, hint: "Affiché seulement si la propriété est à vendre. Laissez vide pour « Prix sur demande »." }
+      - { label: Adresse, name: adresse, widget: string, required: false, hint: "Affichée seulement si la propriété est à vendre. Pour une propriété vendue ou achetée, seule la ville paraît sur le site." }
       - { label: Ville, name: ville, widget: string }
       - { label: Type, name: type, widget: select, options: [Maison, Condo, Chalet, Plex, Terrain] }
       - { label: Chambres, name: chambres, widget: number, value_type: int, required: false }
@@ -55,9 +55,10 @@ collections:
       - { label: Superficie habitable, name: superficie, widget: string, required: false, hint: "Ex. : 1 200 pi²" }
       - { label: Terrain, name: terrain, widget: string, required: false, hint: "Ex. : 6 000 pi²" }
       - { label: Année de construction, name: annee, widget: number, value_type: int, required: false }
-      - { label: Numéro Centris, name: centris, widget: string, required: false }
+      - { label: Numéro Centris, name: centris, widget: string, required: false, hint: "Affiché seulement si la propriété est à vendre" }
       - { label: Photo principale, name: photo_principale, widget: image, required: false, hint: "Sert de vignette dans les listes" }
       - { label: Autres photos, name: photos, widget: list, field: { label: Photo, name: photo, widget: image }, required: false }
+      - { label: "Description pour Google (1 à 2 phrases)", name: description, widget: text, required: false, hint: "Texte affiché dans les résultats Google et quand on partage la fiche sur Facebook. Environ 150 caractères. Laissé vide, un texte est créé automatiquement. Ne mettez pas l'adresse d'une propriété vendue ou achetée." }
       - { label: Lien vidéo YouTube, name: video, widget: string, required: false }
       - { label: Description, name: body, widget: markdown }
 
@@ -70,6 +71,7 @@ collections:
         file: src/_data/site.json
         fields:
           - { label: Nom du site, name: nom, widget: string }
+          - { label: "Adresse du site (ex. https://immocrb.com)", name: url, widget: string }
           - { label: Votre nom, name: courtier, widget: string }
           - { label: Titre, name: titre, widget: string }
           - { label: Agence, name: agence, widget: string }
@@ -95,7 +97,6 @@ collections:
             fields:
               - { label: Texte, name: texte, widget: text }
               - { label: Prénom du client, name: auteur, widget: string }
-              - { label: Ville, name: ville, widget: string, required: false }
       - name: taxe
         label: Taxe de bienvenue (tranches)
         file: src/_data/taxe.json

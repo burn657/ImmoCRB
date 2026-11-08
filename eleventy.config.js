@@ -20,7 +20,8 @@ export default function (eleventyConfig) {
     api
       .getFilteredByGlob("src/proprietes/*.md")
       .filter((p) => p.data.statut !== "masque" && p.data.vedette)
-      .sort((a, b) => b.date - a.date)
+      // Les propriétés à vendre d'abord, puis les plus récentes.
+      .sort((a, b) => (a.data.statut === "a_vendre" ? 0 : 1) - (b.data.statut === "a_vendre" ? 0 : 1) || b.date - a.date)
       .slice(0, 6)
   );
 

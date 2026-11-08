@@ -3,8 +3,8 @@ titre: "Condo lumineux de 2 chambres face à la rivière des Mille-Îles"
 statut: achete
 vedette: true
 date: 2026-08-08
-prix: 375000
-adresse: "Chemin Saint-Charles"
+prix:
+adresse: ""
 ville: "Terrebonne (Lachenaie)"
 type: Condo
 chambres: 2
@@ -12,9 +12,10 @@ sdb: 1
 superficie: "1 151 pi²"
 terrain: ""
 annee: 2009
-centris: "11115486"
-photo_principale: "/images/uploads/chemin-saint-charles-terrebonne-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/terrebonne-lachenaie-condo.jpg"
 photos: []
+description: "Condo lumineux de 2 chambres face à la rivière des Mille-Îles, acheté à Lachenaie (Terrebonne) pour un client de Claude-René Brûlé, courtier immobilier."
 video: ""
 ---
 Superbe condo de 2 chambres au 3e étage d'un petit immeuble de 6 unités, dans le secteur recherché de Lachenaie, face à la rivière des Mille-Îles.

@@ -3,8 +3,8 @@ titre: "Résidence de prestige avec piscine creusée et garage double"
 statut: vendu
 vedette: true
 date: 2026-02-06
-prix: 1095000
-adresse: "1315, rue Van-Gogh"
+prix:
+adresse: ""
 ville: "Repentigny"
 type: Maison
 chambres: 4
@@ -12,9 +12,10 @@ sdb: 3
 superficie: "2 894 pi²"
 terrain: "6 984 pi²"
 annee: 2005
-centris: "19176952"
-photo_principale: "/images/uploads/1315-van-gogh-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/repentigny-residence-prestige.jpg"
 photos: []
+description: "Résidence de prestige vendue à Repentigny : 4 chambres, 3 salles de bain, piscine creusée chauffée et garage double. Vendue par Claude-René Brûlé, courtier immobilier."
 video: ""
 ---
 **Résidence de prestige au cœur de Repentigny.** Cette demeure d'exception allie élégance, confort et une localisation recherchée, dans l'un des secteurs les plus convoités de Repentigny, où la tranquillité résidentielle rencontre la commodité urbaine.

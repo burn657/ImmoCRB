@@ -3,8 +3,8 @@ titre: "Condo contemporain sur plusieurs niveaux, clé en main"
 statut: vendu
 vedette: true
 date: 2026-06-12
-prix: 419000
-adresse: "591, rue de Pompadour"
+prix:
+adresse: ""
 ville: "Mascouche"
 type: Condo
 chambres: 2
@@ -12,9 +12,10 @@ sdb: 2
 superficie: "999 pi²"
 terrain: ""
 annee: 2011
-centris: "11838811"
-photo_principale: "/images/uploads/591-pompadour-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/mascouche-condo.jpg"
 photos: []
+description: "Condo contemporain clé en main vendu en 33 jours à Mascouche : 2 chambres, 2 salles de bain, foyer au gaz. Claude-René Brûlé, courtier immobilier."
 video: ""
 ---
 Magnifique condo contemporain à Mascouche, lumineux et clé en main, dans un petit immeuble de 3 unités à la façade élégante en pierre et brique. Vendu en 33 jours.

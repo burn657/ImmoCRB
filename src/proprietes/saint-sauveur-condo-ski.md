@@ -3,8 +3,8 @@ titre: "Condo de coin ski-in / ski-out entièrement rénové"
 statut: achete
 vedette: true
 date: 2026-01-20
-prix: 499900
-adresse: "Avenue Hochar"
+prix:
+adresse: ""
 ville: "Saint-Sauveur"
 type: Condo
 chambres: 3
@@ -12,9 +12,10 @@ sdb: 2
 superficie: ""
 terrain: ""
 annee: 1981
-centris: "13477558"
-photo_principale: "/images/uploads/hochar-saint-sauveur-facade.jpg"
+centris: ""
+photo_principale: "/images/uploads/saint-sauveur-condo.jpg"
 photos: []
+description: "Condo de coin ski-in / ski-out rénové, acheté à Saint-Sauveur pour un client : 3 chambres, vue sur les Laurentides. Claude-René Brûlé, courtier immobilier."
 video: ""
 ---
 Superbe unité de coin sur deux étages à Saint-Sauveur, avec accès direct aux pistes de ski et une vue panoramique sur les Laurentides. Entièrement rénovée depuis 2023 avec des finitions haut de gamme.

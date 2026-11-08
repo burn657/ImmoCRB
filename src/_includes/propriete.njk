@@ -1,16 +1,17 @@
 ---
 layout: base.njk
 ---
+{% set enVente = statut == 'a_vendre' %}
 <div class="conteneur section section--courte">
   <a href="/proprietes/" class="lien">← Retour aux propriétés</a>
 
   <div class="galerie">
     <div class="galerie__principale">
-      {% if photo_principale %}<img src="{{ photo_principale }}" alt="{{ titre }}">{% else %}<span>Photo à venir</span>{% endif %}
+      {% if photo_principale %}<a href="{{ photo_principale }}" class="zoom" aria-label="Agrandir la photo"><img src="{{ photo_principale }}" alt="{{ titre }}"></a>{% else %}<span>Photo à venir</span>{% endif %}
       {% if statut == 'vendu' %}<span class="sceau-vendu" aria-hidden="true">VENDUE</span>{% elif statut == 'achete' %}<span class="sceau-vendu" aria-hidden="true">ACHETÉ</span>{% endif %}
     </div>
     {% for ph in photos %}
-    <a href="{{ ph }}" class="galerie__vignette"><img src="{{ ph }}" alt="Photo {{ loop.index + 1 }} de {{ titre }}" loading="lazy"></a>
+    <a href="{{ ph }}" class="galerie__vignette zoom"><img src="{{ ph }}" alt="Photo {{ loop.index + 1 }} de {{ titre }}" loading="lazy"></a>
     {% endfor %}
   </div>
 
@@ -18,8 +19,8 @@ layout: base.njk
     <div class="fiche__contenu">
       <span class="pastille pastille--statique{% if statut in ['vendu','achete'] %} pastille--vendu{% endif %}">{{ statut | statutLabel }}</span>
       <h1 class="fiche__titre">{{ titre }}</h1>
-      <p class="sous">{{ adresse }}, {{ ville }}</p>
-      <p class="fiche__prix">{{ prix | prix }}</p>
+      <p class="sous">{% if enVente and adresse %}{{ adresse }}, {% endif %}{{ ville }}</p>
+      {% if enVente %}<p class="fiche__prix">{{ prix | prix }}</p>{% endif %}
 
       <dl class="caracs">
         {% if chambres %}<div><dt>Chambres</dt><dd>{{ chambres }}</dd></div>{% endif %}
@@ -38,7 +39,7 @@ layout: base.njk
       <div class="video"><iframe src="https://www.youtube-nocookie.com/embed/{{ yt }}" title="Visite vidéo de {{ titre }}" allowfullscreen loading="lazy"></iframe></div>
       {% endif %}
 
-      {% if centris %}<p class="sous petit">No Centris : {{ centris }}</p>{% endif %}
+      {% if centris and enVente %}<p class="sous petit">No Centris : {{ centris }}</p>{% endif %}
     </div>
 
     <aside class="encadre">
@@ -53,8 +54,31 @@ layout: base.njk
         <label>Téléphone ou courriel<input type="text" name="contact" required></label>
         <label>Message<textarea name="message" rows="3">Bonjour, j'aimerais visiter cette propriété.</textarea></label>
         <button class="btn" type="submit">Demander une visite</button>
+    <p class="sous petit mention">Vos renseignements servent uniquement à répondre à votre demande. <a href="/confidentialite/">Politique de confidentialité</a></p>
       </form>
       <a href="/outils/#hypotheque" class="lien">Calculer mes paiements hypothécaires →</a>
     </aside>
   </div>
 </div>
+
+<dialog class="visionneuse" id="visionneuse" aria-label="Photos de la propriété">
+  <img alt="">
+  <button type="button" class="visionneuse__fermer" aria-label="Fermer">×</button>
+  <button type="button" class="visionneuse__nav visionneuse__prec" aria-label="Photo précédente">‹</button>
+  <button type="button" class="visionneuse__nav visionneuse__suiv" aria-label="Photo suivante">›</button>
+</dialog>
+<script>
+(() => {
+  const liens = [...document.querySelectorAll('.zoom')], d = document.getElementById('visionneuse');
+  if (!liens.length || !d.showModal) return;
+  const img = d.querySelector('img'); let i = 0;
+  const montrer = (n) => { i = (n + liens.length) % liens.length; img.src = liens[i].href; img.alt = liens[i].querySelector('img').alt; };
+  d.classList.toggle('visionneuse--seule', liens.length < 2);
+  liens.forEach((a, n) => a.addEventListener('click', (e) => { e.preventDefault(); montrer(n); d.showModal(); }));
+  d.querySelector('.visionneuse__fermer').onclick = () => d.close();
+  d.querySelector('.visionneuse__prec').onclick = () => montrer(i - 1);
+  d.querySelector('.visionneuse__suiv').onclick = () => montrer(i + 1);
+  d.addEventListener('click', (e) => { if (e.target === d) d.close(); });
+  d.addEventListener('keydown', (e) => { if (e.key === 'ArrowLeft') montrer(i - 1); if (e.key === 'ArrowRight') montrer(i + 1); });
+})();
+</script>
