@@ -57,7 +57,7 @@ p { margin: 0 0 1em; }
 .nav a:not(.btn) { color: var(--encre); text-decoration: none; }
 .nav a:not(.btn):hover { color: var(--accent); }
 .menu-btn { display: none; min-height: 44px; padding: 0 16px; border: 1px solid var(--bordure); border-radius: 8px; background: #fff; font: inherit; font-weight: 700; color: var(--encre); }
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
   .menu-btn { display: inline-flex; align-items: center; }
   .nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 4px; padding-top: 8px; }
   .nav.ouvert { display: flex; }
@@ -200,3 +200,21 @@ p { margin: 0 0 1em; }
 
 /* Page de confidentialité */
 .politique h2 { font-size: 24px; margin-top: 36px; }
+.heros__photo img { object-position: center top; }
+
+/* Logos Via Capitale à droite d'ImmoCRB */
+.marque { display: flex; align-items: center; gap: 18px; min-width: 0; }
+.marque__via { display: flex; align-items: center; gap: 8px; }
+.marque__via img { height: 60px; width: auto; }
+@media (max-width: 480px) {
+  .conteneur.entete__in { padding-inline: 16px; }
+  .marque { gap: 10px; }
+  .logo { font-size: 20px; gap: 6px; }
+  .logo__img { height: 38px; }
+  .marque__via { gap: 4px; }
+  .marque__via img { height: 40px; }
+  .menu-btn { padding: 0 12px; }
+}
+@media (max-width: 359px) {
+  .marque__via img + img { display: none; }
+}
