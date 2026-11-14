@@ -14,6 +14,7 @@
 * { box-sizing: border-box; }
 body { margin: 0; font-family: Manrope, system-ui, sans-serif; color: var(--encre); background: #fff; font-size: 17px; line-height: 1.6; }
 img { max-width: 100%; display: block; }
+picture { display: contents; }
 a { color: var(--accent); }
 a:hover { color: var(--accent-fonce); }
 h1, h2, h3 { line-height: 1.15; margin: 0 0 .4em; letter-spacing: -0.02em; font-weight: 800; }

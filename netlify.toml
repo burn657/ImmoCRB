@@ -51,3 +51,24 @@
   from = "/proprietes/rue-de-levrard-terrebonne/"
   to = "/proprietes/terrebonne-bungalow-3-chambres/"
   status = 301
+
+# Mise en cache dans le navigateur des visiteurs : les photos générées et le logo
+# ne changent jamais de nom, on peut donc les garder un an. La feuille de style et
+# les scripts sont revérifiés à chaque visite pour que vos changements paraissent tout de suite.
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# Sécurité de base : HTTPS obligatoire pour un an et protections du navigateur.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Strict-Transport-Security = "max-age=31536000"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
