@@ -1,0 +1,43 @@
+---
+layout: base.njk
+title: Conditions d'utilisation
+description: "Conditions d'utilisation du site ImmoCRB : information à titre indicatif, calculatrices, estimations, propriété intellectuelle et encadrement du courtage immobilier au Québec."
+permalink: /conditions/
+---
+<div class="conteneur section guide politique">
+  <p class="surtitre">Information légale</p>
+  <h1>Conditions d'utilisation</h1>
+  <p class="intro">En utilisant le site {{ site.nom }}, vous acceptez les conditions ci-dessous. Elles visent à expliquer clairement ce que le site offre, et ce qu'il n'offre pas.</p>
+  <p class="sous petit">Dernière mise à jour : 14 novembre 2026</p>
+
+  <h2>Qui exploite ce site</h2>
+  <p>Le site est exploité par {{ site.courtier }}, {{ site.titre | lower }} titulaire du permis {{ site.permis }} délivré par l'Organisme d'autoréglementation du courtage immobilier du Québec (OACIQ), agissant au sein de l'agence {{ site.agence }}, {{ site.adresse }}.</p>
+
+  <h2>Information à titre indicatif</h2>
+  <p>Les fiches de propriétés, les prix, les guides et les autres contenus du site sont fournis à titre indicatif. Malgré le soin apporté à leur mise à jour, ils peuvent contenir des erreurs ou ne plus être à jour : une propriété peut avoir été vendue, retirée ou modifiée. Seuls les documents officiels de la transaction (fiche descriptive, déclarations du vendeur, promesse d'achat) font foi.</p>
+
+  <h2>Calculatrices et estimations</h2>
+  <p>La calculatrice hypothécaire et le calculateur de droits de mutation (taxe de bienvenue) donnent des approximations. Ils ne remplacent pas l'avis de votre institution financière, de votre notaire ou de votre municipalité.</p>
+  <p>Une demande d'estimation faite sur le site permet de recevoir un avis de valeur préparé par votre courtier. Ce n'est pas une évaluation faite par un évaluateur agréé.</p>
+
+  <h2>Aucun contrat de courtage par le site</h2>
+  <p>Remplir un formulaire ou communiquer avec nous par le site ne crée aucun contrat de courtage. Un tel contrat doit être conclu par écrit, sur les formulaires prévus par la <em>Loi sur le courtage immobilier</em>. Pour en savoir plus sur vos droits et sur la protection offerte au public, visitez le site de l'<a href="https://www.oaciq.com/">OACIQ</a>.</p>
+
+  <h2>Propriété intellectuelle</h2>
+  <p>Les textes, photos, logos et la présentation du site appartiennent à {{ site.courtier }}, à {{ site.agence }} ou à leurs propriétaires respectifs. Ils ne peuvent être copiés ni réutilisés sans autorisation écrite.</p>
+
+  <h2>Liens vers d'autres sites</h2>
+  <p>Le site contient des liens vers des sites externes (réseaux sociaux, organismes publics). Nous ne sommes pas responsables de leur contenu ni de leurs pratiques de confidentialité.</p>
+
+  <h2>Renseignements personnels</h2>
+  <p>La façon dont nous traitons les renseignements que vous nous transmettez est décrite dans notre <a href="/confidentialite/">politique de confidentialité</a>.</p>
+
+  <h2>Responsabilité</h2>
+  <p>Dans la mesure permise par la loi, {{ site.courtier }} et {{ site.agence }} ne pourront être tenus responsables d'un dommage découlant de l'utilisation du site ou de l'information qu'il contient, ni d'une interruption temporaire du site.</p>
+
+  <h2>Droit applicable</h2>
+  <p>Ces conditions sont régies par les lois du Québec et les lois du Canada qui s'y appliquent. Elles peuvent être modifiées en tout temps ; la date de la dernière mise à jour figure en haut de cette page.</p>
+
+  <h2>Nous joindre</h2>
+  <p><a href="tel:+1{{ site.telephone | replace('-', '') }}">{{ site.telephone }}</a> · <a href="mailto:{{ site.courriel }}">{{ site.courriel }}</a></p>
+</div>

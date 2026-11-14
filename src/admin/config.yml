@@ -87,6 +87,7 @@ collections:
           - { label: Lien Facebook, name: facebook, widget: string, required: false }
           - { label: Lien Instagram, name: instagram, widget: string, required: false }
           - { label: Lien YouTube, name: youtube, widget: string, required: false }
+          - { label: "Jeton Cloudflare Web Analytics (mesure d'audience ; laisser vide pour la désactiver)", name: cloudflare_analytics, widget: string, required: false }
       - name: temoignages
         label: Témoignages
         file: src/_data/temoignages.json
