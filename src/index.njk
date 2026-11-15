@@ -8,13 +8,13 @@ layout: base.njk
       <h1>Acheter ou vendre votre maison, avec quelqu'un qui connaît vos besoins.</h1>
       <p class="intro">Découvrez mes propriétés à vendre, estimez la valeur de votre maison et trouvez les réponses à vos questions, au même endroit.</p>
       <div class="boutons">
-        <a href="/proprietes/" class="btn">Voir mes propriétés</a>
-        <a href="/estimation/" class="btn btn--clair">Estimer ma maison</a>
+        <a href="/estimation/" class="btn">Estimation gratuite</a>
+        <a href="/proprietes/" class="btn btn--clair">Voir mes propriétés</a>
       </div>
     </div>
     <div class="heros__photo">
       {% set une = collections.proprietes | first %}
-      {% if site.image_accueil %}<img src="{{ site.image_accueil }}" alt="{{ site.courtier }} lors d’une remise des clés devant une maison">{% elif une and une.data.photo_principale %}<img src="{{ une.data.photo_principale }}" alt="{{ une.data.titre }}">{% else %}<span>Photo à venir</span>{% endif %}
+      {% if site.image_accueil %}<img src="{{ site.image_accueil }}" alt="{{ site.courtier }} lors d’une remise des clés devant une maison" loading="eager" fetchpriority="high">{% elif une and une.data.photo_principale %}<img src="{{ une.data.photo_principale }}" alt="{{ une.data.titre }}">{% else %}<span>Photo à venir</span>{% endif %}
     </div>
   </div>
 </section>

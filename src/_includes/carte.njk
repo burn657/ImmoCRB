@@ -1,7 +1,7 @@
 {% set enVente = p.data.statut == 'a_vendre' %}
 <a href="{{ p.url }}" class="carte">
   <div class="carte__photo">
-    {% if p.data.photo_principale %}<img src="{{ p.data.photo_principale }}" alt="{{ p.data.titre }}" loading="lazy" decoding="async">{% else %}<span>Photo à venir</span>{% endif %}
+    {% if p.data.photo_principale %}<img src="{{ p.data.photo_principale }}" alt="{{ p.data.titre }}" sizes="(max-width: 760px) 100vw, 400px">{% else %}<span>Photo à venir</span>{% endif %}
     {% if p.data.statut == 'vendu' %}<span class="sceau-vendu" aria-hidden="true">VENDUE</span>{% elif p.data.statut == 'achete' %}<span class="sceau-vendu" aria-hidden="true">ACHETÉ</span>{% endif %}
     <span class="pastille{% if not enVente %} pastille--vendu{% endif %}">{{ p.data.statut | statutLabel }}</span>
   </div>

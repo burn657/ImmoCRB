@@ -7,11 +7,11 @@ layout: base.njk
 
   <div class="galerie">
     <div class="galerie__principale">
-      {% if photo_principale %}<a href="{{ photo_principale }}" class="zoom" aria-label="Agrandir la photo"><img src="{{ photo_principale }}" alt="{{ titre }}"></a>{% else %}<span>Photo à venir</span>{% endif %}
+      {% if photo_principale %}<a href="{{ photo_principale }}" class="zoom" aria-label="Agrandir la photo"><img src="{{ photo_principale }}" alt="{{ titre }}" loading="eager" fetchpriority="high" sizes="(max-width: 1200px) 100vw, 1152px"></a>{% else %}<span>Photo à venir</span>{% endif %}
       {% if statut == 'vendu' %}<span class="sceau-vendu" aria-hidden="true">VENDUE</span>{% elif statut == 'achete' %}<span class="sceau-vendu" aria-hidden="true">ACHETÉ</span>{% endif %}
     </div>
     {% for ph in photos %}
-    <a href="{{ ph }}" class="galerie__vignette zoom"><img src="{{ ph }}" alt="Photo {{ loop.index + 1 }} de {{ titre }}" loading="lazy"></a>
+    <a href="{{ ph }}" class="galerie__vignette zoom"><img src="{{ ph }}" alt="Photo {{ loop.index + 1 }} de {{ titre }}" sizes="(max-width: 760px) 100vw, 400px"></a>
     {% endfor %}
   </div>
 
@@ -62,7 +62,7 @@ layout: base.njk
 </div>
 
 <dialog class="visionneuse" id="visionneuse" aria-label="Photos de la propriété">
-  <img alt="">
+  <img eleventy:ignore alt="">
   <button type="button" class="visionneuse__fermer" aria-label="Fermer">×</button>
   <button type="button" class="visionneuse__nav visionneuse__prec" aria-label="Photo précédente">‹</button>
   <button type="button" class="visionneuse__nav visionneuse__suiv" aria-label="Photo suivante">›</button>

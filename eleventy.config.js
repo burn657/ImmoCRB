@@ -1,8 +1,23 @@
 import markdownIt from "markdown-it";
+import { eleventyImageTransformPlugin } from "@11ty/eleventy-img";
 
 const md = markdownIt({ html: false, linkify: true, typographer: false });
 
 export default function (eleventyConfig) {
+  // Photos allégées automatiquement à la construction du site : chaque <img>
+  // reçoit des versions WebP et JPEG en 400, 800 et 1200 px, et le navigateur
+  // télécharge la plus petite qui suffit (téléphone, carte, grande photo).
+  // Les photos ajoutées dans l'admin en profitent aussi, sans rien faire.
+  eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
+    extensions: "html",
+    formats: ["webp", "jpeg"],
+    widths: [400, 800, 1200],
+    sharpJpegOptions: { quality: 78, progressive: true },
+    sharpWebpOptions: { quality: 75 },
+    failOnError: false,
+    defaultAttributes: { loading: "lazy", decoding: "async", sizes: "(max-width: 760px) 100vw, 50vw" },
+  });
+
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");

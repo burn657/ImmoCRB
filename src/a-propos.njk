@@ -12,7 +12,7 @@ permalink: /a-propos/
     <h1>{{ site.courtier }}</h1>
     <h2>À propos</h2>
     <div class="apropos__corps">{{ (site.apropos_complet or site.apropos) | md | safe }}</div>
-    <p><a href="/contact/" class="btn">Discuter de votre projet</a></p>
+    <div class="boutons"><a href="/estimation/" class="btn">Estimation gratuite</a><a href="/contact/" class="btn btn--clair">Discuter de votre projet</a></div>
     <p class="sous">{{ site.agence }} · Permis OACIQ {{ site.permis }} · {{ site.region }}</p>
   </div>
 </div>
