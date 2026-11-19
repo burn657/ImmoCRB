@@ -30,8 +30,10 @@ layout: base.njk
         {% if annee %}<div><dt>Construction</dt><dd>{{ annee }}</dd></div>{% endif %}
       </dl>
 
+      {% if content | trim %}
       <h2>Description</h2>
       <div class="texte">{{ content | safe }}</div>
+      {% endif %}
 
       {% set yt = video | youtubeId %}
       {% if yt %}

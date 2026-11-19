@@ -10,8 +10,10 @@ export default {
     title: (data) => data.titre,
     permalink: (data) => (data.statut === "masque" ? false : `/proprietes/${data.page.fileSlug}/`),
     // Titre Google : « Maison à vendre à Sainte-Anne-des-Plaines | Maison à paliers… | ImmoCRB »
-    titreComplet: (data) =>
-      `${typeNom[data.type] || "Propriété"} ${etatDe(data)} à ${data.ville} | ${data.titre} | ${data.site.nom}`.replace(/\s+/g, " "),
+    titreComplet: (data) => {
+      const debut = `${typeNom[data.type] || "Propriété"} ${etatDe(data)} à ${data.ville}`;
+      return (data.titre === debut ? `${debut} | ${data.site.nom}` : `${debut} | ${data.titre} | ${data.site.nom}`).replace(/\s+/g, " ");
+    },
     // Description propre à chaque fiche ; texte automatique si le champ est laissé vide dans l'admin.
     description: (data) => {
       if (data.description) return data.description;
